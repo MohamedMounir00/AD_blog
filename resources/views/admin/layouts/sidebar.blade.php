@@ -33,7 +33,7 @@
             </span>
           </a>
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Posts</a></li>
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Cst</a></li>
+            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Cat</a></li>
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>  Tags </a></li>
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Users</a></li>
         </li>
