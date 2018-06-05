@@ -14,32 +14,32 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <article>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-           <small>Created at {{ $post->created_at->diffForHumans() }}  </small>
-             @foreach($post->cats as $cat)
-                        <small class="pull-right" style="margin-right:20px; ">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+       <small>Created at {{ $post->created_at->diffForHumans() }}  </small>
+       @foreach($post->cats as $cat)
+       <small class="pull-right" style="margin-right:20px; ">
 
-             {{ $cat->name }}
-                        </small>
+        <a href="{{ route('cat',$cat->slug) }}"> {{ $cat->name}}</a>
+        </small>
 
-             @endforeach
-           {!!htmlspecialchars_decode($post->body)!!}
-           <h3>Tags Clouds</h3>
-             @foreach($post->tags as $tag)
-                        <small class="pull-left" style="margin-right:20px; border-radius: 5px; border:1px solid gray; padding: 5px; ">
+       @endforeach
+       {!!htmlspecialchars_decode($post->body)!!}
+       <h3>Tags Clouds</h3>
+       @foreach($post->tags as $tag)
+       <small class="pull-left" style="margin-right:20px; border-radius: 5px; border:1px solid gray; padding: 5px; ">
 
-             {{ $tag->name }}
-                        </small>
+         <a href="{{ route('tag',$tag->slug) }}">{{ $tag->name }}</a>
+       </small>
 
-             @endforeach
-          </div>
-                  <div class="fb-comments" data-href="{{ Request::url() }}" data-numposts="12"></div>
+       @endforeach
+     </div>
+     <div class="fb-comments" data-href="{{ Request::url() }}" data-numposts="12"></div>
 
-        </div>
-      </div>
-    </article>
+   </div>
+ </div>
+</article>
 
 
 
