@@ -32,10 +32,10 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Posts</a></li>
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Cat</a></li>
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i>  Tags </a></li>
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Users</a></li>
+            <li class="active"><a href="{{route('post.index')}}"><i class="fa fa-circle-o"></i> Posts</a></li>
+            <li class="active"><a href="{{route('cat.index')}}"><i class="fa fa-circle-o"></i> Cat</a></li>
+            <li class="active"><a href="{{route('tag.index')}}"><i class="fa fa-circle-o"></i>  Tags </a></li>
+            <li class="active"><a href="{{route('user.index')}}"><i class="fa fa-circle-o"></i> Users</a></li>
         </li>
 
      

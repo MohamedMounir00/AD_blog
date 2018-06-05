@@ -48,3 +48,21 @@
 <script src="{{asset('admin/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
+<script src="{{asset('admin/bower_components/select2/dist/js/select2.full.min.js
+')}}"></script>
+<script src="{{asset('admin/bower_components/ckeditor/ckeditor.js')}}"></script>
+
+
+<script type="text/javascript">
+	    $('.select2').select2()
+ $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+   // $('.textarea').wysihtml5()
+  })
+</script>
+
+  @section('footer')
+  @show

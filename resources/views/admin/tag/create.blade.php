@@ -25,33 +25,35 @@
 
          <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Cat</h3>
+              <h3 class="box-title">Quick Example</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
-              <div class="box-body">
-              	<div class="col-lg-offset-3 col-lg-6">
+                     <form role="form" action="{{ route('tag.store') }} " method="POST">
+                          {{ csrf_field() }}              <div class="box-body">
+                <div class="col-lg-offset-3 col-lg-6">
                 <div class="form-group">
-                  <label for="tag">  Cat</label>
+                  <label for="tag"> Post tag</label>
                   <input type="text" class="form-control" id="tag" name="name" placeholder="Enter title">
                 </div>
                  <div class="form-group">
-                  <label for="slug"> Cat slug</label>
+                  <label for="slug"> Post slug</label>
                   <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter slug">
                 </div>
              
-             <div class="form-group">
+            
+               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-warning" href="{{ route('tag.index') }}"> Back </a>
+
               </div>
-             
 
                      </div>
              
           </div>
               <!-- /.box-body -->
      
-             
+            
             </form>
           </div>
           <!-- /.box -->
