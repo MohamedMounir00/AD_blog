@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 use App\Category;
 class CatController extends Controller
 {
+
+     public function __construct()
+    {
+      $this->middleware('auth:admin');
+    }
     /**
      * Display a listing of the resource.
      *

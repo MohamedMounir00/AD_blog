@@ -60,6 +60,17 @@ class Handler extends ExceptionHandler
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
 
-        return redirect()->guest(route('login'));
+                //// uses for code to redirect user or addmin to login page 
+         $guard = array_get($exception->guards(),0);
+        switch ($guard) {
+            case 'admin':
+                    return redirect()->guest(route('admin.login'));
+                break;
+            
+            default:
+                    return redirect()->guest(route('login'));
+                break;
+        }
+
     }
 }
