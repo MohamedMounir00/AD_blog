@@ -33,8 +33,14 @@
             </span>
           </a>
             <li class="active"><a href="{{route('post.index')}}"><i class="fa fa-circle-o"></i> Posts</a></li>
+                        @can('posts.tag',Auth::user())
+
             <li class="active"><a href="{{route('cat.index')}}"><i class="fa fa-circle-o"></i> Cat</a></li>
+            @endcan
+
+            @can('posts.cat',Auth::user())
             <li class="active"><a href="{{route('tag.index')}}"><i class="fa fa-circle-o"></i>  Tags </a></li>
+            @endcan
             <li class="active"><a href="{{route('user.index')}}"><i class="fa fa-circle-o"></i> Users</a></li>
             <li class="active"><a href="{{route('role.index')}}"><i class="fa fa-circle-o"></i> Roles</a></li>
             <li class="active"><a href="{{route('permission.index')}}"><i class="fa fa-circle-o"></i> Permissions</a></li>

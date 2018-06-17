@@ -39,9 +39,10 @@
         <div class="box-body">
            <div class="box">
             <div class="box-header">
+        @can('posts.create', Auth::user())
 
            <a class="btn btn-default" href="{{ route('post.create') }}"> Add New Post </a>
-
+            @endcan
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -53,8 +54,16 @@
                   <th>Sub Title</th>
                   <th>Slug</th>
                   <th>Created_at</th>
+                          @can('posts.update', Auth::user())
+
                   <th>Edtie</th>
+                  @endcan
+
+                 @can('posts.delete', Auth::user())
+
                   <th>Delete</th>
+                          @endcan
+
                 </tr>
                 </thead>
                 <tbody>
@@ -65,8 +74,11 @@
                   <td>{{$post->subtitle}}</td>
                   <td>{{$post->slug}}</td>
                   <td>{{$post->created_at}}</td>
-                 <td><a href="{{  route('post.edit',$post->id) }}" class="btn btn-primary"> <span class="glyphicon glyphicon-edit"></span> Edite</a> </td>
+                                            @can('posts.update', Auth::user())
 
+                 <td><a href="{{  route('post.edit',$post->id) }}" class="btn btn-primary"> <span class="glyphicon glyphicon-edit"></span> Edite</a> </td>
+  @endcan
+                 @can('posts.delete', Auth::user())
 
                   <td>
                     <form id="delete-form-{{$post->id}}" method="post" action="{{ route('post.destroy',$post->id) }}" style="display: none">
@@ -74,18 +86,28 @@
                       {{ method_field('DELETE') }}
                     </form>
                     <a href=""  onclick="if(confirm('Are you sure , went to delete this?')){event.preventDefault() ;document.getElementById('delete-form-{{ $post->id }}').submit();}else{event.preventDefault();}" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span> Delete</a> </td>
+                      @endcan
                 </tr>
                 @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
-                <th>S.No</th>
+                <tr>
+                  <th>S.No</th>
                   <th>Title</th>
                   <th>Sub Title</th>
                   <th>Slug</th>
-                  <th>Created_at</th
+                  <th>Created_at</th>
+                   @can('posts.update', Auth::user())
+
                   <th>Edtie</th>
+                  @endcan
+
+                 @can('posts.delete', Auth::user())
+
                   <th>Delete</th>
+                          @endcan
+
                 </tr>
                 </tfoot>
               </table>

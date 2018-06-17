@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Category;
 use App\Tag;
+use Auth;
 class PostController extends Controller
 {
      public function __construct()
@@ -31,9 +32,16 @@ class PostController extends Controller
      */
     public function create()
     {
-        $cats = Category::all();
+        if (Auth::user()->can('posts.create')) {
+         $cats = Category::all();
         $tags = Tag::all();
-            return view('admin.post.create',compact('cats','tags'));
+      return view('admin.post.create',compact('cats','tags'));
+    }
+ 
+              return redirect(route('admin.home'));
+
+   
+      
     }
 
     /**
@@ -89,12 +97,15 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        
+                if (Auth::user()->can('posts.update')) {
+
         $post= Post::with('tags','cats')->where('id',$id)->first();
          $cats = Category::all();
         $tags = Tag::all();
         return view('admin.post.edit',compact('post','cats','tags'));
-
+    }
+ 
+              return redirect(route('admin.home'));
             }
 
     /**
