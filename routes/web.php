@@ -25,6 +25,9 @@ Route::resource('admin/post','PostController');
 Route::resource('admin/tag','TagController');
 Route::resource('admin/cat','CatController');
 Route::resource('admin/user','UserController');
+Route::resource('admin/user','UserController');
+Route::resource('admin/role','RolesController');
+Route::resource('admin/permission','PermissionController');
  Route::get('admin-login', 'Auth\LoginController@showLoginForm')->name('admin.login');
 
          Route::post('admin-login', 'Auth\LoginController@login');
