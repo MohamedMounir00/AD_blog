@@ -17,7 +17,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-       <small>Created at {{ $post->created_at->diffForHumans() }}  </small>
+       <small>Created at {{ $post->created_at }}  </small>
        @foreach($post->cats as $cat)
        <small class="pull-right" style="margin-right:20px; ">
 
